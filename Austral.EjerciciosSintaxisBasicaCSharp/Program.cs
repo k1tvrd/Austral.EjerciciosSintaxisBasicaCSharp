@@ -278,6 +278,12 @@ Console.WriteLine(ResultadoDos);
 
 // a) Crear un array con nombres de 3 productos y mostrarlos por consola.
 
+int Productos[] = { "hoja", "lapiz", "birome" };
+foreach (producto in Productos)
+{
+    Console.WriteLine(producto)
+}
+
 // b) Crear un array con los ingresos trimestrales (double) y calcular el total anual.
 
 // c) Mostrar el producto más vendido de un array con cantidades vendidas.
