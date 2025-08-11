@@ -283,7 +283,7 @@ double PrecioFinal(double precio1, string cliente1)
     {
         return precio1 - (precio1 * 0.20);
     }
-    
+
     else if (cliente1 == "minorista")
     {
         return precio1;
@@ -305,7 +305,7 @@ Console.WriteLine("El precio final es: " + PrecioFinal(precio1, cliente1));
 
 // a) Crear un array con nombres de 3 productos y mostrarlos por consola. AGREGAMOS TMB LISTA
 
-string[] Productos = { "hoja", "lapiz", "birome"};
+string[] Productos = { "hoja", "lapiz", "birome" };
 foreach (string producto in Productos)
 {
     Console.WriteLine("Los productos son: " + producto);
@@ -333,7 +333,7 @@ Console.WriteLine("La suma anual de los ingresos trimestrales es " + sumatoria1)
 
 // c) Mostrar el producto más vendido de un array con cantidades vendidas.
 
-double[] cantidadesVendidas = {100, 500, 1000, 900 };
+double[] cantidadesVendidas = { 100, 500, 1000, 900 };
 
 double mayorCantidad = cantidadesVendidas[0]; //significa "el primer elemento del array"
 //En tu ejemplo cantidadesVendidas es {100, 500, 1000, 900},
@@ -355,7 +355,7 @@ for (int i = 1; i < cantidadesVendidas.Length; i++)
         posicionMayor = i;
     }
 }
-Console.WriteLine("El producto más vendido es el número " + (posicionMayor + 1) +  " con " + mayorCantidad + " ventas.");
+Console.WriteLine("El producto más vendido es el número " + (posicionMayor + 1) + " con " + mayorCantidad + " ventas.");
 
 // d) Crear una lista de precios y calcular el promedio.
 //    Usar List<double> para practicar con listas.
@@ -366,7 +366,7 @@ List<double> Precios = new List<double>();
 Precios.Add(200); Precios.Add(100); Precios.Add(50);
 foreach (int i in Precios)
 {
-    sumatoria = sumatoria + i;   
+    sumatoria = sumatoria + i;
 }
 
 double promedio = sumatoria / Precios.Count; // Precios.Count devuelve cant de precios q tengo
@@ -399,7 +399,5 @@ foreach (var item in Precios2)
 {
     sumatoria2 = sumatoria2 + item;
 
-Console.WriteLine(sumatoria2);
+    Console.WriteLine(sumatoria2);
 }
-
-
