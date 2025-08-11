@@ -238,7 +238,7 @@ else
 //a) Crear una función que reciba el ingreso mensual y devuelva el anual.
 //   Llamar a la función y mostrar el resultado en consola.
 
-Console.WriteLine("Ingrese un num");
+Console.WriteLine("Escriba el ingreso mensual: ");
 int ingresoUno = int.Parse(Console.ReadLine());
 int CalculoAnual(int ingresoUno)
 {
@@ -271,22 +271,135 @@ Console.WriteLine(ResultadoDos);
 // c) Crear una función que reciba el precio y el tipo de cliente y devuelva el precio final con o sin descuento.
 //    Llamar a la función y mostrar el resultado en consola.
 
+Console.WriteLine("Escriba el precio: ");
+double precio1 = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Escriba el tipo de cliente: ");
+string cliente1 = (Console.ReadLine());
+
+double PrecioFinal(double precio1, string cliente1)
+{
+    if (cliente1 == "mayorista")
+    {
+        return precio1 - (precio1 * 0.20);
+    }
+    
+    else if (cliente1 == "minorista")
+    {
+        return precio1;
+    }
+
+    else
+    {
+        Console.WriteLine("El cliente ingresado no existe");
+        return 0;
+    }
+}
+
+Console.WriteLine("El precio final es: " + PrecioFinal(precio1, cliente1));
+
 
 // ===================
 // 6. Listas y arrays
 // ===================
 
-// a) Crear un array con nombres de 3 productos y mostrarlos por consola.
+// a) Crear un array con nombres de 3 productos y mostrarlos por consola. AGREGAMOS TMB LISTA
 
-int Productos[] = { "hoja", "lapiz", "birome" };
-foreach (producto in Productos)
+string[] Productos = { "hoja", "lapiz", "birome"};
+foreach (string producto in Productos)
 {
-    Console.WriteLine(producto)
+    Console.WriteLine("Los productos son: " + producto);
+}
+
+List<string> ProductosDos = new List<string>(); //creamos lista vacia
+ProductosDos.Add("calculadora"); ProductosDos.Add("boligoma");
+foreach (string producto2 in ProductosDos)
+{
+    Console.WriteLine("Los productos nuevos son: " + producto2);
 }
 
 // b) Crear un array con los ingresos trimestrales (double) y calcular el total anual.
 
+double sumatoria1 = 0;
+double[] ingresosTrimestrales = { 300, 200, 100, 400 };
+int cantidadTrimestres = 4;
+foreach (double ingreso1 in ingresosTrimestrales)
+{
+    sumatoria1 = sumatoria1 + ingreso1; // Sumar en cada iteración
+
+}
+Console.WriteLine("La suma anual de los ingresos trimestrales es " + sumatoria1);
+
+
 // c) Mostrar el producto más vendido de un array con cantidades vendidas.
+
+double[] cantidadesVendidas = {100, 500, 1000, 900 };
+
+double mayorCantidad = cantidadesVendidas[0]; //significa "el primer elemento del array"
+//En tu ejemplo cantidadesVendidas es {100, 500, 1000, 900},
+//así que cantidadesVendidas[0] vale 100.
+//Guardamos ese valor (100) en la variable mayorCantidad.
+//Esto es nuestra cantidad más alta encontrada hasta ahora.
+
+int posicionMayor = 0; //guarda el indice del elemento. Los arrays empiezan en 0, así que el primer producto está en la posición 0.
+
+for (int i = 1; i < cantidadesVendidas.Length; i++)
+//Este for recorre el array desde el segundo elemento (i = 1),
+//porque el primero ya lo tomamos como referencia.
+//i < cantidadesVendidas.Length → el bucle se repite mientras i sea menor que 4 (longitud del array).
+//En cada vuelta, revisamos si el elemento en la posición i es mayor que mayorCantidad.
+{
+    if (cantidadesVendidas[i] > mayorCantidad)
+    {
+        mayorCantidad = cantidadesVendidas[i];
+        posicionMayor = i;
+    }
+}
+Console.WriteLine("El producto más vendido es el número " + (posicionMayor + 1) +  " con " + mayorCantidad + " ventas.");
 
 // d) Crear una lista de precios y calcular el promedio.
 //    Usar List<double> para practicar con listas.
+
+int sumatoria = 0;
+
+List<double> Precios = new List<double>();
+Precios.Add(200); Precios.Add(100); Precios.Add(50);
+foreach (int i in Precios)
+{
+    sumatoria = sumatoria + i;   
+}
+
+double promedio = sumatoria / Precios.Count; // Precios.Count devuelve cant de precios q tengo
+Console.WriteLine("El promedio de los precio es: " + promedio);
+
+//CON READLINE
+
+double sumatoria2 = 0;
+List<double> Precios2 = new List<double>();
+int respuesta;
+
+//Repeticion permanente hasta una condicion de salida
+do
+{
+    double i = double.Parse(Console.ReadLine());  //double.Parse es convertir lo q esta entre parentesis. En string lo convierte a double
+    Precios2.Add(i);
+
+    Console.WriteLine("Desea ingresar un nuevo producto?");
+    respuesta = int.Parse(Console.ReadLine());
+}
+
+while (respuesta == 1);
+
+//  dowhile para premitir otro ingreso de datos,      
+//  continuar con un igreso de datos. Entra a bloque do. 
+//  repetir este bloque mientras condicion es verdadera. rta ==1, 
+//  si usuario apretaba 1, te permitia ingresar de nuevo otro precio. 
+
+foreach (var item in Precios2)
+{
+    sumatoria2 = sumatoria2 + item;
+
+Console.WriteLine(sumatoria2);
+}
+
+
