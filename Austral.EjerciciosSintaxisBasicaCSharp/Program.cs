@@ -401,3 +401,34 @@ foreach (var item in Precios2)
 
     Console.WriteLine(sumatoria2);
 }
+
+// ====================================
+// 7. Programación Orientada a Objetos
+// ====================================
+
+// a) Crear una clase llamada Empresa con los campos:
+//    - Nombre
+//    - Cantidad de empleados
+//    - Ingreso mensual
+//    Agregar un método que calcule el ingreso anual.
+//    Crear un objeto de la clase, asignar valores y mostrar el ingreso anual llamando al método.
+
+// b) Modificar la clase Empresa anterior para que sus atributos sean privados
+//    y se accedan mediante propiedades (get y set).
+//    Mostrar el ingreso anual como antes, accediendo a los datos mediante las propiedades.
+
+// c) Crear una clase base Producto con:
+//      - Nombre
+//      - Precio
+//    Luego crear dos clases hijas:
+//      - ProductoFisico: agregar campo "Peso"
+//      - ProductoDigital: agregar campo "URL de descarga"
+//    Crear un objeto de cada clase y mostrar sus datos.
+
+// d) Crear una clase Cliente con:
+//      - Nombre
+//      - TipoCliente → "Mayorista" o "Minorista"
+//    Agregar un método que reciba un precio base y devuelva el precio final:
+//      - Si es "Mayorista", aplica 15% de descuento
+//      - Si es "Minorista", se mantiene el precio
+//    Crear un objeto Cliente de cada tipo y mostrar el precio final para un producto de $1000.
